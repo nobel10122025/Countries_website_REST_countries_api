@@ -1,0 +1,50 @@
+.input-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    width: 100%;
+
+    .search{
+        position: relative;
+
+        .icon{
+            position: absolute;
+            top:35%;
+            left:5%;
+            color: #d3d3d3;
+        }
+
+        .search-box{
+            width: 15rem;
+            height: 3rem;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            outline: 0;
+            border: 2px solid #d3d3d3;
+        }
+        .search-box:focus{
+            border:  2px solid hsl(0, 0%, 35%);
+        }
+    }
+    .dropdown{
+        select, option {
+            outline: 0;
+            border: 0;
+            background-color: white;
+        }
+        select{
+            padding: 0.5rem 1rem;
+            margin: 0rem 1rem;
+            border: 2px solid #d3d3d3;
+        }
+    }
+}
+@media (max-width:680px) {
+    .input-container{
+        flex-direction: column;
+        .dropdown{
+            margin: 1rem 0rem;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.card{
+    .image-container{
+        width: 100%;
+    
+        .image{
+            width: 250px;
+            aspect-ratio: 1.5;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius:1rem 1rem 0rem 0rem; 
+        }
+    }
+    .text-container{
+        background-color: white;
+        padding: 2rem;
+        border-radius:0rem 0rem 1rem 1rem; 
+
+        .title{
+            font-size: larger;
+            font-weight: 700;
+            color: #000;
+        }
+        .info{
+            margin: 0.25rem;
+        }
+    }    
+}
+@media (max-width:1015px) {
+
+        .card{
+            .image-container{
+                width: 80%;
+            }
+        }
+}
+@media (max-width:680px) {
+        .card{
+            .image-container{
+                width: 95%;
+            }
+        }
+}

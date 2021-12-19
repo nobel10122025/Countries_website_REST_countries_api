@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState , useEffect} from 'react'
+import CountriesPreview from './components/countries-preview/CountriesPreview'
+import Header from './components/header/Header'
 
 function App() {
+  const [dataCountries,setDataCountries] = useState([])
+  const [countries , setCountries] = useState([])
+
+  const getDatafromApi = async() => {
+    const url = "https://restcountries.com/v3.1/all"
+    const response = await fetch(url)
+    const data = await response.json() 
+    setCountries(data)
+    setDataCountries(data)
+  }
+  
+  useEffect(()=>{
+    getDatafromApi()
+  },[])
+
+  const handleChange = (e) => {
+    const name = e.target.value;
+    var newCountries = dataCountries.filter((country)=>(
+      country.name.official.toLowerCase().includes(name.toLowerCase())
+    ))
+    setCountries(newCountries)
+  }
+  const handleFilter = (e) => {
+    const continent = e.target.value;
+    if(continent==="all"){
+      return setCountries(dataCountries)
+    }
+    var newCountries = dataCountries.filter((country)=>(
+      country.region.toLowerCase() === continent.toLowerCase())
+    )
+    setCountries(newCountries)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Header />
+    <div>
+      <CountriesPreview 
+        countries={countries} 
+        handleChange={handleChange}
+        handleFilter={handleFilter}
+        />
     </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
