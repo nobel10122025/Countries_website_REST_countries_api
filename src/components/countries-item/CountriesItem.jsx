@@ -1,9 +1,10 @@
-import React from 'react'
+import React  from 'react'
 import './CountriesItem.scss'
 
-function CountriesItem({country}) {
+function CountriesItem({country , handleClick}) {
+    
     return (
-        <div className='card'>
+        <div className='card' onClick={()=>(handleClick(country.ccn3))}>
             <div className='image-container'>
                 <div className='image' style={{backgroundImage : `url(${country.flags.png})`}} />
             </div>
