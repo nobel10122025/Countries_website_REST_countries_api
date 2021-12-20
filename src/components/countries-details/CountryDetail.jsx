@@ -1,16 +1,17 @@
 import React from 'react'
 import './CountryDetails.scss'
 
-function CountryDetail({country , handleBack}) {
+function CountryDetail({country , handleBack ,convertCodeToName ,handleClick}) {
     const nameList= country.name
     const nativeName = Object.values(nameList)[2]
     const currenciesList = country.currencies
     const languageList = country.languages
-   
+    const borderList = country.borders;
+
     return (
         <div className='details-container'>
             <button type="button" onClick={handleBack}>
-                <i class="fas fa-long-arrow-alt-left"></i>  Back
+                <i className="fas fa-long-arrow-alt-left"></i>  Back
             </button>
             <div className="image-container">
                 <div className="image" style={{backgroundImage : `url(${country.flags.png})`}} />
@@ -38,7 +39,8 @@ function CountryDetail({country , handleBack}) {
                     </div>
                     <div className="second-half">
                         <div className="info">
-                            Top level Domain : <span>{country.tld[0]}</span>
+                            Top level Domain : 
+                            <span>{(country.tld[0])?(country.tld[0]):"no domain"}</span>
                         </div>
                         <div className="info">
                             Currencies : <span>{Object.values(currenciesList)[0].name}</span>
@@ -48,6 +50,16 @@ function CountryDetail({country , handleBack}) {
                         </div>
                     </div>
                 </div> 
+                <span className='countries-container'>Border Countries :
+                {
+                     borderList?
+                        (borderList.map((borderCity,index)=>
+                        <span className='border-countries'
+                        onClick={()=>(handleClick(convertCodeToName(borderCity).ccn3))}
+                        key={index}
+                        > {convertCodeToName(borderCity).name.common} </span>)):(' No neighbouring countries')
+                }  
+                </span>                 
             </div> 
         </div>
     )

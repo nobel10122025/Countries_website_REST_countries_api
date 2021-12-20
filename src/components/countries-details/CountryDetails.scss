@@ -42,10 +42,36 @@
             margin: 1rem 0rem;
         }
         .details{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr;
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem;
+            .info{
+                font-weight: 600;
+                span{
+                    font-weight: 300;
+                }
+            }
         }
-        
+        .countries-container{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-weight: 600;
+
+            .border-countries{
+                border: 2px solid #d3d3d3;
+                padding: 0.5rem;
+                margin: 0.25rem 0.5rem;
+                cursor: pointer;
+                font-weight: 300;
+               
+           }
+           .border-countries:hover{
+               border:2px solid hsl(0, 0%, 63%);
+           }
+        }
     }
 }
 @media (max-width:1015px) {
@@ -69,6 +95,7 @@
         }
         .text-container{
             width:100%;
+            flex-direction: column;
             .title{
                 text-align: center;
             }

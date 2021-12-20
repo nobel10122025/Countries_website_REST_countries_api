@@ -45,6 +45,15 @@ function App() {
       setSingleCountry(newCountry[0])
       setShowDetail(false)
   }
+
+  const convertCodeToName = (countryCode) => {
+    
+    const Fullname = dataCountries.find((item)=>
+        (item.cca3===countryCode)?(item.name.common): null)
+    // console.log(Fullname)
+    return Fullname
+}
+
   return (
     <>
     <Header />
@@ -57,7 +66,10 @@ function App() {
         handleClick = {handleClick}
         />:
         <CountryDetail 
+        key={singleCountry.ccn3}
         country={singleCountry}
+        handleClick = {handleClick}
+        convertCodeToName={convertCodeToName}
         handleBack={()=>{
           setShowDetail(true);
           setCountries(dataCountries);

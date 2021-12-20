@@ -1,4 +1,6 @@
 .card{
+    cursor: pointer;
+
     .image-container{
         width: 100%;
     
@@ -23,8 +25,15 @@
         }
         .info{
             margin: 0.25rem;
+            font-weight: 600;
+                span{
+                    font-weight: 300;
+                }
         }
     }    
+}
+.card:hover{
+    transform: scale(1.05);
 }
 @media (max-width:1015px) {
 
