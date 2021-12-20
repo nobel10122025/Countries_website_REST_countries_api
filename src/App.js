@@ -48,8 +48,8 @@ function App() {
 
   const convertCodeToName = (countryCode) => {
     
-    const Fullname = dataCountries.find((item)=>
-        (item.cca3===countryCode)?(item.name.common): null)
+    const Fullname = dataCountries.find((country)=>
+        (country.cca3===countryCode)?(country.name.common): null)
     // console.log(Fullname)
     return Fullname
 }
