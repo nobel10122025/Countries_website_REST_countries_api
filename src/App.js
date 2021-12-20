@@ -58,7 +58,10 @@ function App() {
         />:
         <CountryDetail 
         country={singleCountry}
-        handleBack={()=>setShowDetail(true)}
+        handleBack={()=>{
+          setShowDetail(true);
+          setCountries(dataCountries);
+        }}
         />
     }
     </>
