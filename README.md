@@ -22,6 +22,7 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
+- Theme changer (will be added soon)
 
 ### Screenshot
 
@@ -30,8 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Click here](https://github.com/nobel10122025/Countries_website_REST_countries_api)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
+- Live Site URL: [Click here](https://nobel10122025.github.io/Countries_website_REST_countries_api/)
 ## My process
 
 ### Built with
@@ -44,8 +44,8 @@ Users should be able to:
 - Sass
 - [React](https://reactjs.org/) - JS library
 
-
-In the project directory, you can run:
+## How to run 
+Download or Clone this repo and move to project directory . In the project directory, you can run:
 
 ### `npm start`
 
