@@ -1,14 +1,14 @@
 import React  from 'react'
 import './CountriesItem.scss'
 
-function CountriesItem({country , handleClick}) {
+function CountriesItem({country , handleClick ,darkTheme}) {
     
     return (
         <div className='card' onClick={()=>(handleClick(country.ccn3))}>
             <div className='image-container'>
                 <div className='image' style={{backgroundImage : `url(${country.flags.png})`}} />
             </div>
-            <div className='text-container'>
+            <div className={`text-container ${darkTheme? 'dark':''}`}>
             <span className="title">{country.name.common}</span>
                 <div className="info">
                     Population : <span>{country.population}</span>

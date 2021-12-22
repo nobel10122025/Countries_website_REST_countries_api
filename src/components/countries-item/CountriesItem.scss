@@ -5,7 +5,7 @@
         width: 100%;
     
         .image{
-            width: 270px;
+            width: auto;
             aspect-ratio: 1.5;
             background-repeat: no-repeat;
             background-position: center;
@@ -14,14 +14,16 @@
         }
     }
     .text-container{
-        background-color: white;
+        background-color:hsl(0, 0%, 100%);
         padding: 2rem;
         border-radius:0rem 0rem 1rem 1rem; 
 
+        &.dark{
+            background-color:hsl(209, 23%, 22%);
+        }
         .title{
             font-size: larger;
             font-weight: 700;
-            color: #000;
         }
         .info{
             margin: 0.25rem;
@@ -39,14 +41,14 @@
 
         .card{
             .image-container{
-                width: 80%;
+                width: 100%;
             }
         }
 }
 @media (max-width:680px) {
         .card{
             .image-container{
-                width: 95%;
+                width: 100%;
             }
         }
 }

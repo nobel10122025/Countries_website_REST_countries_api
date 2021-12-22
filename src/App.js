@@ -2,11 +2,13 @@ import React, {useState , useEffect} from 'react'
 import CountriesPreview from './components/countries-preview/CountriesPreview'
 import Header from './components/header/Header'
 import CountryDetail from './components/countries-details/CountryDetail'
+import './App.scss';
 function App() {
   const [dataCountries,setDataCountries] = useState([])
   const [countries , setCountries] = useState([])
   const [showDetail , setShowDetail] = useState(true)
   const [singleCountry , setSingleCountry] = useState({})
+  const [darkTheme , setDarkTheme] = useState(true)
 
   const getDatafromApi = async() => {
     const url = "https://restcountries.com/v3.1/all"
@@ -55,8 +57,11 @@ function App() {
 }
 
   return (
-    <>
-    <Header />
+    <div className={ `container ${darkTheme? 'dark':''}`}>
+    <Header 
+    setTheme={()=>{setDarkTheme(!darkTheme)}}
+    darkTheme={darkTheme}
+    />
     {
       showDetail ?
       <CountriesPreview 
@@ -64,6 +69,7 @@ function App() {
         handleChange={handleChange}
         handleFilter={handleFilter}
         handleClick = {handleClick}
+        darkTheme={darkTheme}
         />:
         <CountryDetail 
         key={singleCountry.ccn3}
@@ -76,7 +82,7 @@ function App() {
         }}
         />
     }
-    </>
+    </div>
   )
 }
 

@@ -1,0 +1,25 @@
+// $bgColor :hsl(0, 0%, 98%);
+// $cardColor : hsl(0, 0%, 100%);
+// $textColor : hsl(200, 15%, 8%);
+// $bgColor : hsl(207, 26%, 17%);
+// $cardColor : hsl(209, 23%, 22%);
+// $textColor : hsl(0, 0%, 100%);
+
+.container {
+    $bgColor :hsl(0, 0%, 98%);
+    $cardColor : hsl(0, 0%, 100%);
+    $textColor : hsl(200, 15%, 8%);
+    
+    background-color: $bgColor;
+    color: $textColor;
+    
+    &.dark{
+        $bgColor : hsl(207, 26%, 17%);
+        $cardColor : hsl(209, 23%, 22%);
+        $textColor : hsl(0, 0%, 100%);
+    
+        background-color: $bgColor;
+        color: $textColor;
+    }
+    
+}

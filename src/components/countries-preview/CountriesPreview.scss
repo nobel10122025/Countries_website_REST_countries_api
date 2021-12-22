@@ -3,6 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3rem;
     margin: 3rem;
+    min-height: 71vh;
 }
 @media (max-width:1015px) {
     .card-container{
