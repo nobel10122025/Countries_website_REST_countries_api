@@ -22,7 +22,7 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Theme changer (will be added soon)
+- Theme changer
 
 ### Screenshot
 
