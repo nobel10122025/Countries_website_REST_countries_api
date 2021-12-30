@@ -8,10 +8,11 @@
         position: relative;
 
         .icon{
-            position: absolute;
-            top:35%;
-            left:5%;
             color: #d3d3d3;
+            left: 5%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-5%, -50%);
         }
 
         .search-box{
