@@ -3,12 +3,14 @@ import CountriesPreview from './components/countries-preview/CountriesPreview'
 import Header from './components/header/Header'
 import CountryDetail from './components/countries-details/CountryDetail'
 import './App.scss';
+import Loading from './components/loading/Loading';
 function App() {
   const [dataCountries,setDataCountries] = useState([])
   const [countries , setCountries] = useState([])
   const [showDetail , setShowDetail] = useState(true)
   const [singleCountry , setSingleCountry] = useState({})
-  const [darkTheme , setDarkTheme] = useState(true)
+  const [darkTheme , setDarkTheme] = useState(false)
+  const [isLoading , setisLoading] = useState(true)
 
   const getDatafromApi = async() => {
     const url = "https://restcountries.com/v3.1/all"
@@ -16,6 +18,7 @@ function App() {
     const data = await response.json() 
     setCountries(data)
     setDataCountries(data)
+    setisLoading(false)
   }
   
   useEffect(()=>{
@@ -57,11 +60,12 @@ function App() {
 }
 
   return (
+    isLoading ? ( <Loading darkTheme={darkTheme}/>) : (
     <div className={ `container ${darkTheme? 'dark':''}`}>
-    <Header 
-    setTheme={()=>{setDarkTheme(!darkTheme)}}
-    darkTheme={darkTheme}
-    />
+      <Header 
+      setTheme={()=>{setDarkTheme(!darkTheme)}}
+      darkTheme={darkTheme}
+      />
     {
       showDetail ?
       <CountriesPreview 
@@ -83,6 +87,7 @@ function App() {
         />
     }
     </div>
+    )
   )
 }
 
