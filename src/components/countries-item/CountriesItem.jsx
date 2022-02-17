@@ -1,10 +1,12 @@
-import React  from 'react'
+import React , {useContext} from 'react'
+import { countriesContext } from '../context/countries.provider'
 import './CountriesItem.scss'
 
-function CountriesItem({country , handleClick ,darkTheme}) {
+function CountriesItem({country}) {
+    const {darkTheme , handleClick , data}  = useContext(countriesContext)
     
     return (
-        <div className='card' onClick={()=>(handleClick(country.ccn3))}>
+        <div className='card' onClick={() => handleClick( data, country.ccn3)}>
             <div className='image-container'>
                 <div className='image' style={{backgroundImage : `url(${country.flags.png})`}} />
             </div>

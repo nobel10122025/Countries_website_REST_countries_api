@@ -1,18 +1,20 @@
-import React from 'react'
-import './CountriesPreview.scss'
+import React ,  {useContext} from 'react'
+
 import CountriesItem from '../countries-item/CountriesItem'
 import Input from '../input/Input'
+import { countriesContext } from '../context/countries.provider'
 
-function CountriesPreview({countries , handleChange , handleFilter , handleClick ,darkTheme}) {
+import './CountriesPreview.scss'
+
+
+function CountriesPreview() {
+    const {countries} = useContext(countriesContext)
     return (
             <div>
-                <Input handleChange={handleChange} 
-                    handleFilter={handleFilter}></Input>
+                <Input />
                 <div className='card-container'>
                     {countries.map((country , index)=>            
-                    <CountriesItem key={index} country={country} 
-                    handleClick={handleClick}
-                    darkTheme={darkTheme}
+                    <CountriesItem key={index} country={country}
                     />)}
                 </div>
             </div>

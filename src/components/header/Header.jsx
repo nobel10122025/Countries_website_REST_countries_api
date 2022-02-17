@@ -1,11 +1,13 @@
-import React from 'react'
+import React , { useContext }from 'react'
+import { countriesContext } from '../context/countries.provider'
 import './Header.scss'
 
-function Header({setTheme ,darkTheme}) {
+function Header() {
+    const {toggleTheme ,darkTheme} = useContext(countriesContext)
     return (
         <div className="header">
             <div className="title">Where is the world?</div>
-            <div className="button-container" onClick={()=>setTheme()}>
+            <div className="button-container" onClick={toggleTheme}>
             {
                 (darkTheme)?(
                     <>

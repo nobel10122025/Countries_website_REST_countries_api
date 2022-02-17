@@ -1,7 +1,9 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import './Input.scss'
+import { countriesContext } from '../context/countries.provider'
 
-function Input({handleChange , handleFilter}) {
+function Input() {
+    const {handleChange , handleFilter} = useContext(countriesContext)
     return (
     <div className="input-container">
         <div className="search">
